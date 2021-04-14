@@ -1,0 +1,34 @@
+// primjer 1
+async function myFunc() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Hello"), 1000);
+  });
+
+  const error = false;
+
+  if (!error) {
+    const res = await promise; // Wait until promise is resolved
+    return res;
+  } else {
+    await Promise.reject(new Error("Something went wrong"));
+  }
+}
+
+//
+myFunc()
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
+
+//*** Primjer 2************** */
+async function getUsers() {
+  // moramo čekati odgovor od fetch
+  const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+  // Ako je sve response of fetch ok, slijedi ovo
+  const data = await response.json();
+
+  // only proceed once second promise is resolved
+  return data;
+}
+
+getUsers().then((users) => console.log(users));

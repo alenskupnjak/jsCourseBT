@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SETS</title>
+</head>
+
+<body>
+  <h1>SETS</h1>
+
+</body>
+<script>
+
+console.log('*********** L 205 Set - garantira unique Value *********')
+const ids = new Set(['Hi', 'from', 'set!', 16, -2, 'kokos']);
+ids.add(2);
+console.log(ids)
+
+if (ids.has('Hi')) {
+  ids.delete('Hi');
+}
+console.log(ids.entries());
+console.log(ids.values());
+
+for (const entry of ids.entries()) {
+  console.log(entry[0]);
+}
+for (const data of ids.values()) {
+  console.log(data);
+}
+
+
+</script>
+
+</html>
